@@ -7,7 +7,7 @@ var express = require("express");
 var routes = require("./app/indx.js");
 var mongo = require("mongodb").MongoClient;
 
-var mongoURI = process.env.Mongo_URI ||'mongodb://localhost:27017/imagesearch';
+var mongoURI = "mongodb://" + config.db.host + config.db.name ||'mongodb://localhost:27017/imagesearch';
 var app = express();
 
 app.use("/", express.static(process.cwd() + '/public'));
